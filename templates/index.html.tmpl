@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>대한민국 고위공무원 이슈트래킹</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css" integrity="sha512-NhSC1YmyruXifcj/KFRWoC561YpHpc5Jtzgvbuzx5VozKpWvQ+4nXhPdFgmx8xqexRcpAglTj9sIBWINXa8x5w==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+
+<style>
+
+/* Dark mode styles */
+@media (prefers-color-scheme: dark) {
+  body {
+    background-color: #121212;
+    color: #ffffff;
+  }
+
+  a {
+    color: #90caf9;
+  }
+}
+#searchInput {
+    width: calc(100% - 2em); /* 마진을 고려한 너비 설정 */
+    padding: 10px;
+    font-size: 0.8em;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.hidden {
+    display: none;
+}
+
+body {
+  margin: 1em;
+}
+
+@media (min-width: 768px) {
+  body {
+    margin: 5em;
+  }
+}
+
+.list-item {
+line-height: 1.5em;
+}
+
+.list-item span:nth-child(1) {
+	margin-right: 1em;
+}
+
+.list-item span:nth-child(1) a {
+	text-decoration: none;
+	color: inherit;
+}
+
+</style>
+
+<body>
+    <div style="display: flex; justify-content: space-between; align-items: center;">
+    <h1>22대 국회의원 이슈 트래킹</h1>
+      <a href="https://github.com/track-kr/officials/blob/main/assembly_issue.csv" 
+         target="_blank" 
+         style="font-size: 0.875em; color: gray; text-decoration: none;">
+        이슈 추가
+      </a>
+    </div>
+
+    <input type="text" id="searchInput" placeholder="필터">
+
+    <div class="list-container" id="listContainer">
+        {{range .}}
+        <div class="list-item">
+            <span><a href="https://www.assembly.go.kr/assm/memPop/memPopup.do?dept_cd={{.DeptCd}}">{{.EmpNm}}({{.OrigNm}}/{{.PolyNm}})</a></span>
+			<span>{{.Issues}}</span>
+        </div>
+        {{end}}
+    </div>
+
+    <script>
+        const searchInput = document.getElementById("searchInput");
+        const items = document.querySelectorAll("#listContainer .list-item:not(.header)");
+
+        searchInput.addEventListener("input", function () {
+            const keyword = this.value.toLowerCase();
+            items.forEach(item => {
+                const text = item.textContent.toLowerCase();
+                if (text.includes(keyword)) {
+                    item.classList.remove("hidden");
+                } else {
+                    item.classList.add("hidden");
+                }
+            });
+        });
+    </script>
+</body>
