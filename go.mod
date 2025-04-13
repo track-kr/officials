@@ -5,7 +5,7 @@ go 1.24.1
 require (
 	github.com/davecgh/go-spew v1.1.1
 	github.com/jszwec/csvutil v1.10.0
-	github.com/track-kr/go-datagokr v0.0.0-20250413012725-35941f3af344
+	github.com/track-kr/go-datagokr v0.0.0-20250413054224-cd76f4c1e214
 )
 
 require (

@@ -12,5 +12,7 @@ github.com/smartystreets/goconvey v1.8.1 h1:qGjIddxOk4grTu9JPOU31tVfq3cNdBlNa5sS
 github.com/smartystreets/goconvey v1.8.1/go.mod h1:+/u4qLyY6x1jReYOp7GOM2FSt8aP9CzCZL03bI28W60=
 github.com/track-kr/go-datagokr v0.0.0-20250413012725-35941f3af344 h1:RLzqjsGun2lCrqMJIXgYphkQjPUI78IBH5ySbeDaLmQ=
 github.com/track-kr/go-datagokr v0.0.0-20250413012725-35941f3af344/go.mod h1:U2DN0XQhFWrcoiqSUoeseRi2s4LevZwjrdnPhmCa68Y=
+github.com/track-kr/go-datagokr v0.0.0-20250413054224-cd76f4c1e214 h1:JG0PFpYAWOGy4A9NmuhQfm31L5mXmWc+lYHtwCrDOXo=
+github.com/track-kr/go-datagokr v0.0.0-20250413054224-cd76f4c1e214/go.mod h1:U2DN0XQhFWrcoiqSUoeseRi2s4LevZwjrdnPhmCa68Y=
 moul.io/http2curl v1.0.0 h1:6XwpyZOYsgZJrU8exnG87ncVkU1FVCcTRpwzOkTDUi8=
 moul.io/http2curl v1.0.0/go.mod h1:f6cULg+e4Md/oW1cYmwW4IWQOVl2lGbmCNGOHvzX2kE=
